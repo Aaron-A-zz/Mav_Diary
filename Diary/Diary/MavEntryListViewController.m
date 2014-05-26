@@ -10,6 +10,7 @@
 #import "MavCoreDataStack.h"
 #import "MavDiaryEntry.h"
 #import "MavEntryViewController.h"
+#import "MavEntryCell.h"
 
 @interface MavEntryListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -78,12 +79,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    MavEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     MavDiaryEntry *entry = [self.fetchedResualtsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = entry.body;
+    
+    [cell configureCellForEntry:entry];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MavDiaryEntry *entry = [self.fetchedResualtsController objectAtIndexPath:indexPath];
+    return [MavEntryCell heightForEntry:entry];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

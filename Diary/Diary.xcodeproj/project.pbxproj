@@ -28,6 +28,8 @@
 		210605AD1932834C000D576D /* MavEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210605AC1932834C000D576D /* MavEntryViewController.m */; };
 		210605B0193288D0000D576D /* MavEntryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210605AF193288D0000D576D /* MavEntryListViewController.m */; };
 		21A8520C1932EE98000DC137 /* MavNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8520B1932EE98000DC137 /* MavNavigationController.m */; };
+		21A8520F193362E5000DC137 /* MavEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8520E193362E5000DC137 /* MavEntryCell.m */; };
+		21A852111933FA3C000DC137 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A852101933FA3C000DC137 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		210605AF193288D0000D576D /* MavEntryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MavEntryListViewController.m; sourceTree = "<group>"; };
 		21A8520A1932EE98000DC137 /* MavNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MavNavigationController.h; sourceTree = "<group>"; };
 		21A8520B1932EE98000DC137 /* MavNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MavNavigationController.m; sourceTree = "<group>"; };
+		21A8520D193362E5000DC137 /* MavEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MavEntryCell.h; sourceTree = "<group>"; };
+		21A8520E193362E5000DC137 /* MavEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MavEntryCell.m; sourceTree = "<group>"; };
+		21A852101933FA3C000DC137 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A852111933FA3C000DC137 /* QuartzCore.framework in Frameworks */,
 				2106057119327C98000D576D /* CoreGraphics.framework in Frameworks */,
 				2106057519327C98000D576D /* CoreData.framework in Frameworks */,
 				2106057319327C98000D576D /* UIKit.framework in Frameworks */,
@@ -120,6 +126,7 @@
 		2106056D19327C98000D576D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21A852101933FA3C000DC137 /* QuartzCore.framework */,
 				2106056E19327C98000D576D /* Foundation.framework */,
 				2106057019327C98000D576D /* CoreGraphics.framework */,
 				2106057219327C98000D576D /* UIKit.framework */,
@@ -138,6 +145,8 @@
 				210605AC1932834C000D576D /* MavEntryViewController.m */,
 				21A8520A1932EE98000DC137 /* MavNavigationController.h */,
 				21A8520B1932EE98000DC137 /* MavNavigationController.m */,
+				21A8520D193362E5000DC137 /* MavEntryCell.h */,
+				21A8520E193362E5000DC137 /* MavEntryCell.m */,
 				210605A319327D38000D576D /* MavCoreDataStack.h */,
 				210605A419327D38000D576D /* MavCoreDataStack.m */,
 				2106057F19327C98000D576D /* MavAppDelegate.h */,
@@ -279,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2106058419327C98000D576D /* Diary.xcdatamodeld in Sources */,
+				21A8520F193362E5000DC137 /* MavEntryCell.m in Sources */,
 				2106057D19327C98000D576D /* main.m in Sources */,
 				210605B0193288D0000D576D /* MavEntryListViewController.m in Sources */,
 				210605A519327D38000D576D /* MavCoreDataStack.m in Sources */,
