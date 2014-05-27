@@ -110,6 +110,7 @@
     entry.date = [[NSDate date] timeIntervalSince1970];
     entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
     entry.location = self.location;
+    entry.mood = self.pickedMood;
     [coreDataStack saveContext];
     
 }
@@ -118,7 +119,7 @@
     self.entry.body = self.textView.text;
     
     self.entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
-    
+    self.entry.mood = self.pickedMood;
     MavCoreDataStack *coreDataStack = [MavCoreDataStack defaultStack];
     [coreDataStack saveContext];
     
@@ -170,8 +171,8 @@
     _pickedMood = pickedMood;
     
     self.badButton.alpha = 0.5f;
-    self.goodButton.alpha = 0.5;
-    self.averageButton.alpha = 0.5;
+    self.goodButton.alpha = 0.5f;
+    self.averageButton.alpha = 0.5f;
     
     switch (pickedMood) {
         case MavDiaryEntryMoodGood:
@@ -179,6 +180,7 @@
             break;
         case MavDiaryEntryMoodAverage:
             self.averageButton.alpha = 1.0f;
+            break;
         case MavDiaryEntryMoodBad:
             self.badButton.alpha = 1.0f;
             break;

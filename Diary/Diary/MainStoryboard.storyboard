@@ -128,8 +128,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accessoryView" destination="g5f-Y9-REQ" id="gSD-f1-5Jy"/>
-                        <outlet property="averageButton" destination="fPi-jm-Sji" id="vix-ZV-gff"/>
-                        <outlet property="badButton" destination="nib-aV-JsO" id="izt-uq-g6d"/>
+                        <outlet property="averageButton" destination="rOe-oY-kQh" id="CxG-em-qqC"/>
+                        <outlet property="badButton" destination="8Tj-8r-yRt" id="a8e-Ui-Dcd"/>
                         <outlet property="dateLable" destination="eK3-93-5G9" id="5b9-pn-2jh"/>
                         <outlet property="goodButton" destination="VVk-h4-Rdg" id="SWN-jS-3pd"/>
                         <outlet property="imageButton" destination="SHQ-h2-WxC" id="H95-M2-Qot"/>
@@ -141,19 +141,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nib-aV-JsO">
-                            <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.95686274509803915" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                            <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Bad" image="icn_bad_lrg">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="badWasPressed:" destination="SBU-Cg-WZ5" eventType="touchUpInside" id="UGz-5e-5Lf"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VVk-h4-Rdg">
                             <rect key="frame" x="213" y="0.0" width="107" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,17 +154,30 @@
                                 <action selector="goodWasPressed:" destination="SBU-Cg-WZ5" eventType="touchUpInside" id="Bks-Pf-yBo"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fPi-jm-Sji">
-                            <rect key="frame" x="107" y="0.0" width="107" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rOe-oY-kQh">
+                            <rect key="frame" x="109" y="0.0" width="104" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Average" image="icn_average_lrg">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="averageWasPressed:" destination="SBU-Cg-WZ5" eventType="touchUpInside" id="ar0-5G-ghC"/>
+                                <action selector="averageWasPressed:" destination="SBU-Cg-WZ5" eventType="touchUpInside" id="yaJ-ie-FOa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Tj-8r-yRt">
+                            <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.95686274510000002" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Bad" image="icn_bad_lrg">
+                                <color key="titleColor" red="1" green="0.99405321880363651" blue="0.98926028904275387" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="badWasPressed:" destination="SBU-Cg-WZ5" eventType="touchUpInside" id="9kT-ty-3yt"/>
                             </connections>
                         </button>
                     </subviews>
