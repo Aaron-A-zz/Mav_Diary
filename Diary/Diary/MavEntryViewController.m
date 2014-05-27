@@ -9,9 +9,14 @@
 #import "MavEntryViewController.h"
 #import "MavDiaryEntry.h"
 #import "MavCoreDataStack.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface MavEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface MavEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSString *location;
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @property(nonatomic, strong) UIImage *pickedImage;
@@ -52,6 +57,7 @@
     } else {
         self.pickedMood = MavDiaryEntryMoodGood;
         date = [NSDate date];
+        [self loadLocation];
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE MMMM d, yyyy"];
@@ -59,6 +65,7 @@
     
     self.textView.inputAccessoryView = self.accessoryView;
     self.imageButton.layer.cornerRadius = CGRectGetWidth(self.imageButton.frame) / 2.0f;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -75,6 +82,24 @@
 
 -(void)dismissSelf {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)loadLocation {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = 1000;
+    [self.locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [self.locationManager stopUpdatingLocation];
+    
+    CLLocation *location = [locations firstObject];
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks firstObject];
+        self.location = placemark.name;
+    }];
     
 }
 
@@ -84,6 +109,7 @@
     entry.body = self.textView.text;
     entry.date = [[NSDate date] timeIntervalSince1970];
     entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.75);
+    entry.location = self.location;
     [coreDataStack saveContext];
     
 }
